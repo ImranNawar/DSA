@@ -68,8 +68,7 @@ int linearsearch(struct Array arr,int key)//we are not passing by address becaus
 int main()
 {
     struct Array arr = {{2,3,4,5,6},10,5};
-
-    cout<<"\n "<<linearsearch(arr,5);
+ //   cout<<"\n "<<linearsearch(arr,5);
     display(arr);
     return 0;
 }
