@@ -1,4 +1,4 @@
-//Queue implementation in C language
+//Queue implementation using array in C language
 #include <stdio.h>
 #include <stdlib.h>
 struct Queue
