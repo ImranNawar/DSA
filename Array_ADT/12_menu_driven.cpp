@@ -204,7 +204,7 @@ void insertSort(struct Array *arr, int x)
     arr-> length++;
 }
 
-/// CHECK WHETHER ARRA IS  SORTED OR NOT
+/// CHECK WHETHER ARRAY IS  SORTED OR NOT
 int isSorted(struct Array arr)
 {
     for(int i=0;i<arr.length-1; i++)

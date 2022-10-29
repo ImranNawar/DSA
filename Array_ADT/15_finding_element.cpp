@@ -1,6 +1,7 @@
 //Finding single missing element in sorted array - (first n natural numbers)
 //One Approach
 
+//Finding missing element in sorted array of first natural numbers
 #include<iostream>
 using namespace std;
 
