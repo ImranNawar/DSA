@@ -1,4 +1,4 @@
-#include<iostream>
+ #include<iostream>
 using namespace std;
 
 
@@ -6,8 +6,8 @@ struct Node{
     int data;
     struct Node* next;
 };
-
 struct Node* top = NULL;
+
                  /***********   TRAVERSAL   *********/
 void linkedListTraversal(struct Node* ptr){
     while(ptr != NULL){
@@ -61,16 +61,32 @@ int pop(struct Node* tp){
     }
 }
 
+/******   DISPLAY FUNCTION  ******/
+void Display()
+{
+    struct Node *p;
+    p=top;
+    while(p!=NULL)
+    {
+        cout<<p->data<<" ";
+        p = p->next;
+    }
+    cout<<"\n";
+}
+
 int main(){
     //struct Node* top = NULL;
 
     top = push(top, 78);
     top = push(top, 7);
     top = push(top, 8);
+    Display();
 
     int element = pop(top);
-    cout<<"Popped element is"<<element;
+    cout<<"Popped element is "<<element<<"\n";
+
     linkedListTraversal(top);
+
 
     return 0;
 }
