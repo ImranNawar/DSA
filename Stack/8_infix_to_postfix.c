@@ -1,12 +1,14 @@
+// stack using linked list   ---paranthesis matching  ---infix to postfix conversio   ---evaluation
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <strings.h>
 struct Node
 {
-    char data;
+    int data;   //change to int from char for evaluation
     struct Node *next;
 } *top = NULL;
-void push(char x)
+void push(int x)   //change to int from char for evaluation
 {
     struct Node *t;
     t = (struct Node *)malloc(sizeof(struct Node));
@@ -20,10 +22,10 @@ void push(char x)
         top = t;
     }
 }
-char pop()
+int pop()    //change to int from char for evaluation
 {
     struct Node *t;
-    char x = -1;
+    int x = -1;   //change to int from char for evaluation
 
     if (top == NULL)
         printf("Stack is Empty\n");
@@ -111,14 +113,47 @@ char *InToPost(char *infix)
     return postfix;
 }
 
+int Eval(char *postfix)
+{
+    int i=0; 
+    int x1, x2, r;
+
+    for(i=0; postfix[i] != '\0'; i++)
+    {
+        if(isOperand(postfix[i]))
+        {
+            push(postfix[i] - '0');  //from this postfix expression we will be getting char
+                                     // we should convert it into integr so we subtract the ASCII code 
+                                     //of '0' or can subtract 48 also
+        }
+        else
+        {
+            x2 = pop(); x1 = pop();
+            switch(postfix[i])
+            {
+                case '+' : r = x1 + x2; break;
+                case '-' : r = x1 - x2; break;
+                case '*' : r = x1 * x2; break;
+                case '/' : r = x1 / x2; break;
+            }
+            push(r);  //push result into the stack
+        }
+    }
+    return top->data;
+}
+
 int main()
 {
-    char *infix = "a+b*c-d/e";
-    push('#');
+    // char *infix = "a+b*c-d/e";
+    // push('#');
 
-    char *postfix = InToPost(infix);
+    // char *postfix = InToPost(infix);
 
-    printf("%s ", postfix);
+    // printf("%s ", postfix);
+
+    char *postfix = "234*+82/-";
+
+    printf("Result is %d\n", Eval(postfix));
 
     return 0;
 }
