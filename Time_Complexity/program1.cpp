@@ -1,4 +1,6 @@
-// Find the time compexity of the func1 function in the program show in program1.cpp as below
+// Find the time compexity of the func1 function 
+
+
 
 #include <iostream>
 using namespace std;
@@ -25,3 +27,5 @@ int main()
     func1(arr,3);
     return 0;
 }
+
+// Time Complexity: O(n)
