@@ -16,7 +16,7 @@ int main()
 
     }
     i=i-1;       //IN the below loop error
-    for(j=0; j>=0; i--, j++)
+    for(j=0; j<='\0'; i--, j++)
     {
         B[j] = A[i];
     }
