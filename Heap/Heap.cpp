@@ -1,5 +1,4 @@
 // PROGRAM FOR MAX-HEAP AND HEAP SORT
-
 #include<iostream>
 using namespace std;
 
@@ -67,7 +66,6 @@ int main()
   {
     Delete(H,i);
   }
-  
   
   // Display
   for(i=1; i<=7; i++)
