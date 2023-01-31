@@ -50,6 +50,7 @@ bool isHeap(struct Node1* root1){
    return true;
    return false;
 }
+
 // Driver program
 int main(){
    struct Node1* root1 = NULL;
